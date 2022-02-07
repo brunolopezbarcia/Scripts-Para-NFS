@@ -1,7 +1,7 @@
 #!/bin/bash
 
 function existe () {
-        res=$(ldapsearch -x -b 'dc=iescalquera,dc=loc' ou=$1 | tail -n 1 | grep numEntries)
+        res=$(ldapsearch -x -b 'dc=iescalquera,dc=local' ou=$1 | tail -n 1 | grep numEntries)
         if [[ $res == "" ]]
         then
                 return -1
@@ -23,7 +23,7 @@ for linea in $(cat $1)
 do
 	sou=$(echo $linea | awk -F: '{print $1}')
 	spou=$(echo $linea | awk -F: '{print $2}')
-	fpou=$(ldapsearch -x -b 'dc=iescalquera,dc=loc' ou=$spou | grep ou=$spou, | awk '{split($0,a," "); print a[2]}')
+	fpou=$(ldapsearch -x -b 'dc=iescalquera,dc=local' ou=$spou | grep ou=$spou, | awk '{split($0,a," "); print a[2]}')
 	fou="ou=$sou,$fpou"
 	if [[  $fpou == "" ]]
 	then
@@ -45,6 +45,6 @@ do
 done
 
 echo "Se ejecutará la operación de agregado sobre el siguiente fichero: " && cat ous.ldif
-ldapadd -D cn=admin,dc=iescalquera,dc=loc -w Abcd1234. -f ous.ldif
+ldapadd -D cn=admin,dc=iescalquera,dc=local -w abc123. -f ous.ldif
 rm ous.ldif
 echo "Operación completada"
