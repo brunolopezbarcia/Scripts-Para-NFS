@@ -1,6 +1,6 @@
 #!/bin/bash
 
-for line in `cat ficherousuariosañadidos.txt | egrep '^dn:'`;
+for line in `cat nuevousuario.ldif | egrep '^dn:'`;
 do
 echo "$line" >> ousinprocesar.txt
 done
@@ -14,6 +14,6 @@ do
 ldapdelete -D "cn=admin,dc=iescalquera,dc=local" -w abc123. $ou
 done
 
-rm ficherousuariosañadidos.txt
+rm nuevousuario.ldif
 rm ousinprocesar.txt
 rm ouprocesadas.txt
