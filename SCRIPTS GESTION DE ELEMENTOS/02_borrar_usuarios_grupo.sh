@@ -1,4 +1,4 @@
-       #!/usr/bin/env bash
+#!/bin/bash
 
 echo "De que grupo quieres borrar usuarios?"
 read entradagrupo
