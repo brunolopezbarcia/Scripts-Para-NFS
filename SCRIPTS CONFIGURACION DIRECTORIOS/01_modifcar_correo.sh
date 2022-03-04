@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
-#!/usr/bin/env bash
-
+#MODIFICAR CORREO
 
 cd /root/Scripts/Scripts\ archivos\ LDIF/
 

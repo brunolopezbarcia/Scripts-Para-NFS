@@ -2,6 +2,8 @@
 #Escribe un script que comprobe se existe unha OU dada. Deberás comprobar que se pasa un parámetro.
 #No caso de que non se atope a OU, o comando rematará estado de exit de erro.
 
+#COMPROBAR EXISTENCIA OU
+
 if [ $# -ne 1 ]; then
   echo "Debes introducir el nombre de la OU."
 else

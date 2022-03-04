@@ -1,5 +1,7 @@
 #!/bin/bash
 
+##EXTRAER NOMBRE DE DOMINIO
+
 #Este script nos permitira extraer el nombre de dominio del servidor de ldap
 
 slapcat  > /tmp/salida.slapcat
